@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>MEXUS POLY-PRINT</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mexus Poly-Print</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fcfcfc;
+        color: #333;
+    }
+    
+    .hero {
+        display: flex;
+        height: 100vh;
+        background-color: #ffffff;
+    }
+    .hero-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+    .hero-text h1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+        letter-spacing: 2px;
+        color: #111;
+    }
+    .hero-text h2 {
+        font-size: 3rem;
+        margin-top: 0;
+        color: #444;
+        font-weight: 300;
+    }
+    
+    .btn-blue {
+        background-color: #0056b3;
+        color: white;
+        padding: 15px 45px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 30px;
+        box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+        transition: all 0.3s ease;
+    }
+    .btn-blue:hover {
+        background-color: #004494;
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
+    }
+
+    .hero-image {
+        flex: 1.2;
+        /* FOTO 1: Un fondo abstracto colorido similar a tu burbuja */
+        background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop'); 
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .about-section {
+        display: flex;
+        padding: 100px 10%;
+        align-items: center;
+        background-color: #f9f9f9;
+    }
+    .about-text {
+        flex: 1;
+        padding-right: 60px;
+    }
+    .about-text h2 {
+        font-size: 3.5rem;
+        margin-bottom: 5px;
+        color: #111;
+    }
+    .about-text h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 25px;
+        color: #0056b3;
+    }
+    .about-text p {
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #555;
+    }
+    .about-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    .about-image img {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        transition: transform 0.4s ease;
+    }
+    .about-image img:hover {
+        transform: scale(1.03);
+    }
+
+    .services-section {
+        padding: 100px 10%;
+        text-align: center;
+        background-color: #f0f0f5; 
+    }
+    .services-section h2 {
+        font-size: 3.5rem;
+        margin-bottom: 60px;
+        color: #111;
+    }
+    
+    .service-card {
+        display: flex;
+        background-color: #ffffff; 
+        margin-bottom: 50px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        transition: all 0.4s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .service-img {
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+    }
+    .service-info {
+        flex: 1.2;
+        padding: 50px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .service-info p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #666;
+    }
+    .service-info h3 {
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        font-weight: 600;
+        color: #222;
+    }
+
+    .contact-section {
+        display: flex;
+        padding: 100px 10%;
+        background-color: #f0f0f5;
+        justify-content: center;
+    }
+    .contact-container {
+        display: flex;
+        background-color: white;
+        max-width: 1000px;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    .contact-form {
+        flex: 1.2;
+        padding: 60px;
+    }
+    .contact-form h2 {
+        font-size: 3rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #111;
+    }
+    .contact-form p {
+        margin-bottom: 40px;
+        color: #666;
+        font-size: 1.1rem;
+    }
+    .form-row {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+    .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group label {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #444;
+    }
+    .form-group input {
+        padding: 15px;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+        transition: all 0.3s ease;
+    }
+    .form-group input:focus {
+        outline: none;
+        border-color: #0056b3;
+        background-color: #f4f8ff;
+    }
+    .btn-submit {
+        background-color: #0056b3;
+        color: white;
+        padding: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+    }
+    .btn-submit:hover {
+        background-color: #004494;
+        transform: translateY(-2px);
+    }
+    .thanks-text {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 15px;
+        color: #888;
+    }
+    /* FOTO 8: Un edificio de oficinas moderno */
+    .contact-image {
+        flex: 1;
+        background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1000&auto=format&fit=crop'); 
+        background-size: cover;
+        background-position: center;
+    }
+
+    .modal {
+        display: none; 
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6); 
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        animation: aparecer 0.3s ease;
+    }
+    @keyframes aparecer {
+        from {transform: translateY(-50px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+    .modal-content h2 {
+        color: #0056b3;
+        margin-top: 0;
+    }
+    .modal-content p {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+    .close-btn:hover {
+        color: #111;
+    }
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>MEXUS</h1>
+        <h2>POLY-PRINT</h2>
+        <button class="btn-blue">Start Now</button>
+    </div>
+    <div class="hero-image">
+    </div>
+</div>
+
+<div class="about-section">
+    <div class="about-text">
+        <h2>About</h2>
+        <h3>MEXUS POLY-PRINT</h3>
+        <p>We are MEXUS POLYPRINT, a company focused on helping small and growing businesses build a strong and professional brand identity. We combine customized products with creative marketing solutions so your brand not only looks good, but stands out and is remembered.</p>
+        <button class="btn-blue">About Me</button>
+    </div>
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=1000&auto=format&fit=crop" alt="Mug">
+    </div>
+</div>
+
+<div class="services-section">
+    <h2>Our Services</h2>
+    
+    <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1000&auto=format&fit=crop');"></div>
+        <div class="service-info">
+            <p>Personalized shirts with high-quality prints or embroidery, designed to represent your brand professionally and consistently.</p>
+            <h3>Custom Shirts</h3>
+            <button class="btn-blue">Read More</button>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=1000&auto=format&fit=crop');"></div>
+        <div class="service-info">
+            <p>Custom-designed caps that showcase your company logo and strengthen your brand identity in a practical and stylish way.</p>
+            <h3>Custom Caps</h3>
+            <button class="btn-blue">Read More</button>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1000&auto=format&fit=crop');"></div>
+        <div class="service-info">
+            <p>Branded thermos customized with your company’s design, perfect for promotions, gifts, or everyday brand visibility.</p>
+            <h3>Custom Thermos</h3>
+            <button class="btn-blue">Read More</button>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1616400619175-5beda3a17896?q=80&w=1000&auto=format&fit=crop');"></div>
+        <div class="service-info">
+            <p>High-quality custom stickers ideal for branding, packaging, promotions, and everyday marketing use.</p>
+            <h3>Custom Stickers</h3>
+            <button class="btn-blue">Read More</button>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1000&auto=format&fit=crop');"></div>
+        <div class="service-info">
+            <p>Custom packaging designed to match your brand image and elevate the presentation of your products.</p>
+            <h3>Packaging Solutions</h3>
+            <button class="btn-blue">Read More</button>
+        </div>
+    </div>
+</div>
+
+<div class="contact-section">
+    <div class="contact-container">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <p>Get in touch by filling out the form. We'll respond as soon as we can.</p>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" placeholder="John">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Doe">
+                </div>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label>Email *</label>
+                <input type="email" placeholder="john@example.com">
+            </div>
+            
+            <button class="btn-submit">Submit</button> 
+            <div class="thanks-text">Thanks for submitting!</div>
+        </div>
+        <div class="contact-image"></div>
+    </div>
+</div>
+
+<div id="miCuadrito" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="titulo-cuadrito">Más Información</h2>
+        <p id="texto-cuadrito">Aquí te explicamos más a detalle.</p>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById("miCuadrito");
+    var botonCerrar = document.getElementsByClassName("close-btn")[0];
+    var botonesAzules = document.querySelectorAll(".btn-blue");
+    var titulo = document.getElementById("titulo-cuadrito");
+    var texto = document.getElementById("texto-cuadrito");
+
+    botonesAzules.forEach(function(boton) {
+        boton.onclick = function() {
+            modal.style.display = "flex"; 
+            
+            if (boton.innerText === "Start Now") {
+                titulo.innerText = "¡Arranca tu proyecto!";
+                texto.innerText = "Estamos listos para darle vida a tu marca. Revisa nuestros servicios abajo o mándanos un mensaje en el formulario para empezar.";
+            } else if (boton.innerText === "About Me") {
+                titulo.innerText = "Conoce más de Mexus";
+                texto.innerText = "Nos dedicamos a cuidar cada detalle de tus impresiones para que tu negocio se vea súper profesional en todo momento.";
+            } else if (boton.innerText === "Read More") {
+                titulo.innerText = "Detalles del Producto";
+                texto.innerText = "Manejamos materiales de alta calidad para asegurar que los colores resalten y duren por mucho tiempo. ¡Pregunta por nuestro catálogo!";
+            }
+        }
+    });
+
+    botonCerrar.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
