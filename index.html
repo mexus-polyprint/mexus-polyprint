@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>MEXUS POLY-PRINT</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mexus Poly-Print</title>
+<title>Mexus Poly-Print | Professional Branding</title>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    /* === SCROLL SUAVE PARA TODA LA PÁGINA === */
+    html {
+        scroll-behavior: smooth;
+    }
 
     body {
         font-family: 'Poppins', sans-serif;
@@ -24,44 +18,97 @@
         padding: 0;
         background-color: #fcfcfc;
         color: #333;
+        overflow-x: hidden;
     }
     
+    /* === NAVBAR (MENÚ SUPERIOR CON EFECTO CRISTAL) === */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px); 
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 2000;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #111;
+        text-decoration: none;
+        letter-spacing: 1px;
+    }
+    .logo span {
+        color: #0056b3;
+    }
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+    .nav-links a {
+        text-decoration: none;
+        color: #444;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+        color: #0056b3;
+    }
+
+    /* === HERO SECTION === */
     .hero {
         display: flex;
         height: 100vh;
         background-color: #ffffff;
+        padding-top: 80px; 
+        box-sizing: border-box;
     }
     .hero-text {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        padding: 40px;
+        align-items: flex-start; 
+        padding: 0 10%;
     }
     .hero-text h1 {
-        font-size: 4rem;
+        font-size: 4.5rem;
         margin-bottom: 0;
         letter-spacing: 2px;
         color: #111;
+        line-height: 1.1;
     }
     .hero-text h2 {
-        font-size: 3rem;
-        margin-top: 0;
-        color: #444;
+        font-size: 2.5rem;
+        margin-top: 10px;
+        color: #0056b3;
         font-weight: 300;
+    }
+    .hero-text p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        max-width: 400px;
     }
     
     .btn-blue {
         background-color: #0056b3;
         color: white;
-        padding: 15px 45px;
+        padding: 15px 40px;
         border: none;
         border-radius: 30px;
         cursor: pointer;
         font-size: 1.1rem;
         font-weight: 600;
-        margin-top: 30px;
         box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
         transition: all 0.3s ease;
     }
@@ -73,33 +120,43 @@
 
     .hero-image {
         flex: 1.2;
-        /* FOTO 1: Un fondo abstracto colorido similar a tu burbuja */
         background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop'); 
         background-size: cover;
         background-position: center;
+        border-bottom-left-radius: 60px; 
     }
     
+    /* === ABOUT SECTION === */
     .about-section {
         display: flex;
-        padding: 100px 10%;
+        padding: 120px 10%;
         align-items: center;
         background-color: #f9f9f9;
+        position: relative;
+        z-index: 10;
     }
     .about-text {
         flex: 1;
         padding-right: 60px;
     }
+    .badge {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #e6f0fa;
+        color: #0056b3;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
     .about-text h2 {
         font-size: 3.5rem;
-        margin-bottom: 5px;
-        color: #111;
-    }
-    .about-text h3 {
-        font-size: 1.8rem;
-        font-weight: 400;
-        margin-top: 0;
         margin-bottom: 25px;
-        color: #0056b3;
+        margin-top: 0;
+        color: #111;
+        line-height: 1.2;
     }
     .about-text p {
         line-height: 1.8;
@@ -111,93 +168,119 @@
         flex: 1;
         display: flex;
         justify-content: center;
+        position: relative;
+    }
+    .about-image::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        width: 100%;
+        max-width: 450px;
+        height: 100%;
+        border: 3px solid #0056b3;
+        border-radius: 20px;
+        z-index: 0;
     }
     .about-image img {
         width: 100%;
         max-width: 450px;
         border-radius: 20px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        position: relative;
+        z-index: 1;
         transition: transform 0.4s ease;
     }
     .about-image img:hover {
-        transform: scale(1.03);
+        transform: scale(1.02) translateX(-10px) translateY(-10px);
     }
 
+    /* === SERVICES SECTION === */
     .services-section {
-        padding: 100px 10%;
+        padding: 120px 10%;
         text-align: center;
-        background-color: #f0f0f5; 
+        background-color: #ffffff; 
     }
     .services-section h2 {
         font-size: 3.5rem;
-        margin-bottom: 60px;
+        margin-bottom: 80px;
         color: #111;
     }
     
     .service-card {
         display: flex;
-        background-color: #ffffff; 
-        margin-bottom: 50px;
-        max-width: 900px;
+        background-color: #fff; 
+        margin-bottom: 60px;
+        max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 20px;
+        border-radius: 24px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        border: 1px solid #eee;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.04);
         transition: all 0.4s ease;
     }
     .service-card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        border-color: #e6f0fa;
     }
+    .service-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    
     .service-img {
         flex: 1;
         background-size: cover;
         background-position: center;
-        min-height: 300px;
+        min-height: 350px;
     }
     .service-info {
         flex: 1.2;
-        padding: 50px;
+        padding: 60px;
         text-align: left;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        background-color: #fafafa;
+    }
+    .service-info h3 {
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: #222;
     }
     .service-info p {
         font-size: 1.1rem;
         line-height: 1.7;
-        margin-top: 0;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         color: #666;
     }
-    .service-info h3 {
-        font-size: 2rem;
-        margin-top: 10px;
-        margin-bottom: 25px;
-        font-weight: 600;
-        color: #222;
-    }
 
+    /* === CONTACT SECTION === */
     .contact-section {
         display: flex;
-        padding: 100px 10%;
-        background-color: #f0f0f5;
+        padding: 120px 10%;
+        background-color: #f0f4f8; 
         justify-content: center;
     }
     .contact-container {
         display: flex;
         background-color: white;
-        max-width: 1000px;
+        max-width: 1100px;
         width: 100%;
-        border-radius: 20px;
+        border-radius: 24px;
         overflow: hidden;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.08);
     }
     .contact-form {
         flex: 1.2;
-        padding: 60px;
+        padding: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .contact-form h2 {
         font-size: 3rem;
@@ -209,232 +292,336 @@
         margin-bottom: 40px;
         color: #666;
         font-size: 1.1rem;
+        line-height: 1.6;
     }
-    .form-row {
-        display: flex;
-        gap: 25px;
-        margin-bottom: 25px;
-    }
-    .form-group {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .form-group label {
-        font-size: 0.95rem;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #444;
-    }
-    .form-group input {
-        padding: 15px;
-        border: 2px solid #eee;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-family: 'Poppins', sans-serif;
-        transition: all 0.3s ease;
-    }
-    .form-group input:focus {
-        outline: none;
-        border-color: #0056b3;
-        background-color: #f4f8ff;
-    }
-    .btn-submit {
-        background-color: #0056b3;
+
+    /* ESTILOS PARA LOS BOTONES DIRECTOS DE CONTACTO */
+    .btn-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: #25D366;
         color: white;
-        padding: 18px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        width: 100%;
-        font-size: 1.1rem;
+        text-decoration: none;
+        padding: 18px 30px;
+        border-radius: 30px;
         font-weight: 600;
-        margin-top: 15px;
-        transition: all 0.3s ease;
+        font-size: 1.1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 15px;
     }
-    .btn-submit:hover {
-        background-color: #004494;
-        transform: translateY(-2px);
+    .btn-whatsapp:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
     }
-    .thanks-text {
-        text-align: center;
-        font-size: 0.9rem;
-        margin-top: 15px;
-        color: #888;
+
+    .btn-instagram {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        color: white;
+        text-decoration: none;
+        padding: 18px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
     }
-    /* FOTO 8: Un edificio de oficinas moderno */
+    .btn-instagram:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);
+    }
+
     .contact-image {
         flex: 1;
-        background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1000&auto=format&fit=crop'); 
+        background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop'); 
         background-size: cover;
         background-position: center;
     }
 
+    /* === BOTÓN FLOTANTE DE INSTAGRAM === */
+    .floating-ig {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 10px 25px rgba(220, 39, 67, 0.4);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        animation: latido 2s infinite;
+    }
+    .floating-ig:hover {
+        transform: scale(1.1);
+        animation: none;
+    }
+    .floating-ig svg {
+        fill: white;
+        width: 32px;
+        height: 32px;
+    }
+
+    @keyframes latido {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    /* === FOOTER === */
+    footer {
+        background-color: #111;
+        color: #fff;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    footer p {
+        color: #888;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    /* === MODAL === */
     .modal {
         display: none; 
         position: fixed;
-        z-index: 1000;
+        z-index: 3000;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.6); 
+        background-color: rgba(0,0,0,0.7); 
+        backdrop-filter: blur(5px);
         justify-content: center;
         align-items: center;
     }
     .modal-content {
         background-color: #fff;
-        padding: 40px;
-        border-radius: 20px;
+        padding: 50px;
+        border-radius: 24px;
         max-width: 500px;
         width: 90%;
         text-align: center;
         position: relative;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        animation: aparecer 0.3s ease;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        animation: aparecer 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     @keyframes aparecer {
-        from {transform: translateY(-50px); opacity: 0;}
-        to {transform: translateY(0); opacity: 1;}
+        from {transform: translateY(-50px) scale(0.9); opacity: 0;}
+        to {transform: translateY(0) scale(1); opacity: 1;}
     }
     .modal-content h2 {
-        color: #0056b3;
+        color: #111;
         margin-top: 0;
+        font-size: 2rem;
     }
     .modal-content p {
         color: #555;
         font-size: 1.1rem;
-        line-height: 1.6;
+        line-height: 1.7;
     }
     .close-btn {
         position: absolute;
-        top: 15px;
+        top: 20px;
         right: 25px;
         color: #aaa;
-        font-size: 28px;
-        font-weight: bold;
+        font-size: 32px;
+        font-weight: 300;
         cursor: pointer;
         transition: color 0.2s;
     }
     .close-btn:hover {
         color: #111;
     }
+
+    /* === DISEÑO RESPONSIVO PARA MÓVILES === */
+    @media (max-width: 992px) {
+        .service-card, .service-card:nth-child(even) {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar { padding: 15px 5%; }
+        .nav-links { display: none; } 
+        
+        .hero {
+            flex-direction: column;
+            padding-top: 100px;
+            height: auto; 
+            min-height: 100vh;
+        }
+        .hero-text {
+            align-items: center;
+            text-align: center;
+            padding: 40px 5%;
+            flex: none; 
+        }
+        .hero-text h1 { font-size: 3.2rem; }
+        .hero-text h2 { font-size: 1.8rem; }
+        
+        .hero-image {
+            min-height: 400px;
+            width: 100%;
+            border-bottom-left-radius: 0;
+            flex: none;
+        }
+        
+        .about-section {
+            flex-direction: column;
+            text-align: center;
+            padding: 80px 5%;
+        }
+        .about-text {
+            padding-right: 0;
+            margin-bottom: 60px;
+        }
+        .about-text h2 {
+            font-size: 2.2rem; 
+            line-height: 1.3;
+        }
+        
+        .about-image::before { display: none; } 
+        
+        .services-section, .contact-section {
+            padding: 80px 5%;
+        }
+        .services-section h2, .contact-form h2 {
+            font-size: 2.2rem;
+        }
+        
+        .contact-container {
+            flex-direction: column;
+        }
+        .contact-form {
+            padding: 40px 20px;
+        }
+        .contact-image {
+            min-height: 300px;
+        }
+    }
 </style>
 </head>
 <body>
+
+<nav class="navbar">
+    <a href="#" class="logo">Mexus<span>.</span></a>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
 <div class="hero">
     <div class="hero-text">
         <h1>MEXUS</h1>
         <h2>POLY-PRINT</h2>
-        <button class="btn-blue">Start Now</button>
+        <p>Elevating brands through high-quality custom printing and professional packaging solutions.</p>
+        <a href="#services" class="btn-blue" style="text-decoration: none; display: inline-block;">Explore Services</a>
     </div>
-    <div class="hero-image">
-    </div>
+    <div class="hero-image"></div>
 </div>
 
-<div class="about-section">
+<div id="about" class="about-section">
     <div class="about-text">
-        <h2>About</h2>
-        <h3>MEXUS POLY-PRINT</h3>
+        <span class="badge">Who we are</span>
+        <h2>Building Strong Identities</h2>
         <p>We are MEXUS POLYPRINT, a company focused on helping small and growing businesses build a strong and professional brand identity. We combine customized products with creative marketing solutions so your brand not only looks good, but stands out and is remembered.</p>
-        <button class="btn-blue">About Me</button>
+        <button class="btn-blue">Our Mission</button>
     </div>
     <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=1000&auto=format&fit=crop" alt="Mug">
+        <img src="https://images.unsplash.com/photo-1567473030492-533b30c5494c?q=80&w=1000&auto=format&fit=crop" alt="Printing Workshop">
     </div>
 </div>
 
-<div class="services-section">
-    <h2>Our Services</h2>
+<div id="services" class="services-section">
+    <h2>What We Do Best</h2>
     
     <div class="service-card">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1000&auto=format&fit=crop');"></div>
         <div class="service-info">
-            <p>Personalized shirts with high-quality prints or embroidery, designed to represent your brand professionally and consistently.</p>
             <h3>Custom Shirts</h3>
-            <button class="btn-blue">Read More</button>
+            <p>Personalized shirts with high-quality prints or embroidery, designed to represent your brand professionally and consistently.</p>
+            <button class="btn-blue">Product Details</button>
         </div>
     </div>
 
     <div class="service-card">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=1000&auto=format&fit=crop');"></div>
         <div class="service-info">
+            <h3>Premium Caps</h3>
             <p>Custom-designed caps that showcase your company logo and strengthen your brand identity in a practical and stylish way.</p>
-            <h3>Custom Caps</h3>
-            <button class="btn-blue">Read More</button>
+            <button class="btn-blue">Product Details</button>
         </div>
     </div>
 
     <div class="service-card">
         <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1000&auto=format&fit=crop');"></div>
         <div class="service-info">
-            <p>Branded thermos customized with your company’s design, perfect for promotions, gifts, or everyday brand visibility.</p>
-            <h3>Custom Thermos</h3>
-            <button class="btn-blue">Read More</button>
-        </div>
-    </div>
-
-    <div class="service-card">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1616400619175-5beda3a17896?q=80&w=1000&auto=format&fit=crop');"></div>
-        <div class="service-info">
-            <p>High-quality custom stickers ideal for branding, packaging, promotions, and everyday marketing use.</p>
-            <h3>Custom Stickers</h3>
-            <button class="btn-blue">Read More</button>
-        </div>
-    </div>
-
-    <div class="service-card">
-        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1000&auto=format&fit=crop');"></div>
-        <div class="service-info">
-            <p>Custom packaging designed to match your brand image and elevate the presentation of your products.</p>
-            <h3>Packaging Solutions</h3>
-            <button class="btn-blue">Read More</button>
+            <h3>Branded Thermos</h3>
+            <p>Branded thermos customized with your company’s design, perfect for promotions, corporate gifts, or everyday visibility.</p>
+            <button class="btn-blue">Product Details</button>
         </div>
     </div>
 </div>
 
-<div class="contact-section">
+<div id="contact" class="contact-section">
     <div class="contact-container">
         <div class="contact-form">
-            <h2>Contact Us</h2>
-            <p>Get in touch by filling out the form. We'll respond as soon as we can.</p>
+            <h2>Let's Talk</h2>
+            <p>Ready to upgrade your brand? Send us a direct message with what you need and we will get back to you with a quote immediately.</p>
             
-            <div class="form-row">
-                <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" placeholder="John">
-                </div>
-                <div class="form-group">
-                    <label>Last Name</label>
-                    <input type="text" placeholder="Doe">
-                </div>
+            <div style="margin-top: 20px;">
+                <a href="https://wa.me/526641202226?text=Hola%20Mexus,%20me%20gustaría%20una%20cotización." target="_blank" class="btn-whatsapp">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 1.927 6.533L.31 23.684l5.31-1.58A11.956 11.956 0 0 0 11.944 24a12 12 0 0 0 12-12 12 12 0 0 0-12-12zM21.21 12a9.28 9.28 0 0 1-9.266 9.282 9.25 9.25 0 0 1-4.735-1.296l-.34-.202-3.52 1.047 1.066-3.435-.221-.352A9.23 9.23 0 0 1 2.678 12 9.28 9.28 0 0 1 11.944 2.718 9.28 9.28 0 0 1 21.21 12zM17.06 15.01c-.28-.14-1.65-.815-1.905-.908-.255-.093-.44-.14-.625.14s-.716.908-.876 1.093c-.16.185-.32.208-.6.068a7.58 7.58 0 0 1-2.228-1.376 8.35 8.35 0 0 1-1.543-1.92c-.16-.277-.017-.427.123-.566.126-.126.28-.327.42-.49.14-.163.186-.28.28-.466.093-.186.046-.35-.023-.49-.07-.14-.625-1.506-.856-2.06-.225-.54-.455-.466-.625-.476-.16-.01-.345-.01-.53-.01a1.01 1.01 0 0 0-.74.344c-.256.28-1.002.978-1.002 2.385s1.026 2.766 1.17 2.952c.14.186 2.013 3.072 4.876 4.306 2.096.905 2.822.954 3.845.803 1.11-.164 3.107-1.27 3.545-2.504.438-1.234.438-2.292.307-2.516-.13-.224-.48-.358-.76-.498z"/></svg>
+                    Chat on WhatsApp
+                </a>
+
+                <a href="https://www.instagram.com/mexus_polyprint/" target="_blank" class="btn-instagram">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Message on Instagram
+                </a>
             </div>
-            
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label>Email *</label>
-                <input type="email" placeholder="john@example.com">
-            </div>
-            
-            <button class="btn-submit">Submit</button> 
-            <div class="thanks-text">Thanks for submitting!</div>
         </div>
         <div class="contact-image"></div>
     </div>
 </div>
 
+<footer>
+    <p>&copy; 2026 Mexus Poly-Print. All Rights Reserved.</p>
+</footer>
+
+<a href="https://www.instagram.com/mexus_polyprint/" target="_blank" class="floating-ig" title="DM us on Instagram">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+</a>
+
 <div id="miCuadrito" class="modal">
     <div class="modal-content">
         <span class="close-btn">&times;</span>
-        <h2 id="titulo-cuadrito">Más Información</h2>
-        <p id="texto-cuadrito">Aquí te explicamos más a detalle.</p>
+        <h2 id="titulo-cuadrito">More Information</h2>
+        <p id="texto-cuadrito">Details go here.</p>
     </div>
 </div>
 
 <script>
+    /* === LÓGICA DEL MODAL === */
     var modal = document.getElementById("miCuadrito");
     var botonCerrar = document.getElementsByClassName("close-btn")[0];
-    var botonesAzules = document.querySelectorAll(".btn-blue");
+    
+    // Cambié el querySelector para que solo agarre los <button> y no el enlace <a> nuevo
+    var botonesAzules = document.querySelectorAll("button.btn-blue"); 
     var titulo = document.getElementById("titulo-cuadrito");
     var texto = document.getElementById("texto-cuadrito");
 
@@ -442,33 +629,19 @@
         boton.onclick = function() {
             modal.style.display = "flex"; 
             
-            if (boton.innerText === "Start Now") {
-                titulo.innerText = "¡Arranca tu proyecto!";
-                texto.innerText = "Estamos listos para darle vida a tu marca. Revisa nuestros servicios abajo o mándanos un mensaje en el formulario para empezar.";
-            } else if (boton.innerText === "About Me") {
-                titulo.innerText = "Conoce más de Mexus";
-                texto.innerText = "Nos dedicamos a cuidar cada detalle de tus impresiones para que tu negocio se vea súper profesional en todo momento.";
-            } else if (boton.innerText === "Read More") {
-                titulo.innerText = "Detalles del Producto";
-                texto.innerText = "Manejamos materiales de alta calidad para asegurar que los colores resalten y duren por mucho tiempo. ¡Pregunta por nuestro catálogo!";
+            if (boton.innerText === "Our Mission") {
+                titulo.innerText = "Quality First";
+                texto.innerText = "We focus on premium materials and precision printing to ensure your brand stands out from the competition.";
+            } else if (boton.innerText === "Product Details") {
+                titulo.innerText = "Premium Catalog";
+                texto.innerText = "We offer a wide range of colors, sizes, and printing methods (Screen printing, embroidery, DTF). Send us a DM on Instagram for a full catalog!";
             }
         }
     });
 
-    botonCerrar.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+    botonCerrar.onclick = function() { modal.style.display = "none"; }
+    window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
 </script>
 
 </body>
-</html>
-    
-  </body>
-  
 </html>
